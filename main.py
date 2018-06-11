@@ -54,6 +54,8 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     :return: The Tensor for the last layer of output
     """
 
+    # With random_normal_initializer the best results are achieved.
+
     conv_1x1_7 = tf.layers.conv2d(inputs=vgg_layer7_out,
                                   filters=num_classes,
                                   kernel_size=(1, 1),
